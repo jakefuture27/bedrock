@@ -1,9 +1,9 @@
 /* Base & Reset */
 :root {
-    --bg-space: #111111;
-    --box-bg: #222222;
-    --neon-blue: #ffffff;
-    --box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    --bg-space: #4a3b32; /* Dirt */
+    --box-bg: #7d7d7d;   /* Stone */
+    --neon-blue: #000000;
+    --box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -13,38 +13,36 @@
 }
 
 body {
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Press Start 2P', cursive; 
     background-color: var(--bg-space);
     color: #fff;
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+    image-rendering: pixelated;
 }
 
 /* Texture Overlay */
-.star-texture {
+.dirt-texture {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px), radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px), radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px), radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 3px);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    background-color: var(--bg-space);
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
     pointer-events: none;
     z-index: -2;
-    animation: moveStars 100s linear infinite;
 }
 
-@keyframes moveStars {
-    0% { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
-    100% { background-position: -550px -550px, -310px -490px, -120px -280px, -80px -50px; }
-}
-
-/* Old Text Styling */
-.old-text {
+/* MC Text Styling */
+.mc-text {
     color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 2px 2px 0 #555;
+    text-shadow: 4px 4px 0 #333;
 }
 
 .marquee-container {
@@ -86,7 +84,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 50;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .nav-logo {
@@ -112,20 +110,7 @@ body {
     color: #fff;
 }
 
-.nav-btn {
-    background-color: #ddd;
-    color: #000;
-    border: none;
-    padding: 0.4rem 1rem;
-    font-size: 1.2rem;
-    font-family: 'Playfair Display', serif;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.nav-btn:hover {
-    background-color: #fff;
-}
+/* Removed nav-btn */
 
 /* Hero Section */
 .hero-section {
@@ -135,7 +120,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding-top: 5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Press Start 2P', cursive;
     position: relative;
     z-index: 10;
 }
@@ -189,19 +174,26 @@ body {
 }
 
 .btn-solid {
-    background-color: #eee;
-    color: #000;
-    border: 2px solid #eee;
-    padding: 0.6rem 2rem;
+    background-color: #7d7d7d;
+    color: #fff;
+    border: 4px solid #000;
+    border-top-color: #aaa;
+    border-left-color: #aaa;
+    padding: 1rem 2rem;
     font-size: 1.2rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Press Start 2P', cursive;
     cursor: pointer;
-    transition: all 0.2s;
+    text-shadow: 2px 2px 0 #333;
 }
 
 .btn-solid:hover {
-    background-color: #fff;
-    border-color: #fff;
+    background-color: #999;
+}
+
+.btn-solid:active {
+    border-color: #000;
+    border-bottom-color: #aaa;
+    border-right-color: #aaa;
 }
 
 .btn-outline {
@@ -210,7 +202,7 @@ body {
     border: 2px solid #555;
     padding: 0.6rem 2rem;
     font-size: 1.2rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Press Start 2P', cursive;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -224,7 +216,7 @@ body {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Press Start 2P', cursive;
     color: #555;
     font-size: 1rem;
     z-index: 10;
@@ -373,7 +365,7 @@ body {
 }
 
 #copy-btn {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Press Start 2P', cursive;
     background-color: var(--neon-blue);
     color: #000;
     border: none;
@@ -445,116 +437,90 @@ body {
 
 /* CRT & Vintage Filters */
 .crt-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px);
-    pointer-events: none;
-    z-index: 900;
-}
-.crt-flicker {
+/* Minecraft Loading Screen */
+.mc-loading-container {
     position: fixed;
     inset: 0;
-    pointer-events: none;
-    z-index: 901;
-    background: rgba(0, 0, 0, 0.1);
-    animation: crtFlicker 0.1s infinite;
-}
-@keyframes crtFlicker {
-    0% { opacity: 0.05; }
-    50% { opacity: 0.1; }
-    100% { opacity: 0.05; }
-}
-.vignette {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 902;
-    background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.8) 150%);
-}
-
-/* TV Intro Screen */
-.tv-intro-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000;
+    background-color: #5c4033; /* Dirt */
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.5s;
 }
-.tv-noise {
-    position: absolute;
-    inset: 0;
-    background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
-    animation: noise 0.2s infinite;
-    opacity: 0.3;
-}
-@keyframes noise {
-    0%, 100% { background-position: 0 0; }
-    10% { background-position: -5% -10%; }
-    20% { background-position: -15% 5%; }
-    30% { background-position: 7% -25%; }
-    40% { background-position: 20% 25%; }
-    50% { background-position: -25% 10%; }
-    60% { background-position: 15% 5%; }
-    70% { background-position: 0% 15%; }
-    80% { background-position: 25% 35%; }
-    90% { background-position: -10% 10%; }
-}
-.tv-center {
-    position: relative;
-    z-index: 1001;
+
+.mc-loading-content {
     text-align: center;
-}
-.tv-title {
-    font-size: 5rem;
     color: #fff;
-    text-shadow: 2px 2px 5px #000;
-    letter-spacing: 10px;
+    text-shadow: 2px 2px 0 #333;
+}
+
+.mc-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.mc-subtitle {
+    font-size: 1rem;
+    color: #aaa;
     margin-bottom: 2rem;
 }
-.tv-btn {
-    font-size: 2rem;
-    background: transparent;
+
+.mc-progress-box {
+    width: 400px;
+    height: 30px;
+    background: #000;
+    border: 2px solid #555;
+    margin: 0 auto 2rem auto;
+    position: relative;
+}
+
+.mc-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #55ff55;
+    transition: width 2s linear;
+}
+
+.mc-btn {
+    background: #7d7d7d;
+    border: 4px solid #000;
+    border-top-color: #aaa;
+    border-left-color: #aaa;
     color: #fff;
-    border: 2px solid #fff;
-    padding: 1rem 3rem;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1rem 2rem;
     cursor: pointer;
-    transition: all 0.2s;
-}
-.tv-btn:hover {
-    background: #fff;
-    color: #000;
-}
-.tv-off {
-    animation: tvTurnOff 0.5s forwards;
-}
-@keyframes tvTurnOff {
-    0% { transform: scale(1, 1); filter: brightness(1); }
-    60% { transform: scale(1, 0.001); filter: brightness(2); }
-    100% { transform: scale(0, 0); filter: brightness(0); opacity: 0; display: none; }
+    text-shadow: 2px 2px 0 #333;
+    font-size: 1.2rem;
 }
 
-/* Glitch Image effect */
-.glitch-container {
-    animation: imgGlitch 5s infinite;
-}
-@keyframes imgGlitch {
-    0%, 96%, 100% { transform: translate(0,0) skew(0deg); filter: grayscale(100%); }
-    97% { transform: translate(-5px, 5px) skew(5deg); filter: grayscale(100%) invert(20%); }
-    98% { transform: translate(5px, -5px) skew(-5deg); filter: grayscale(100%) contrast(150%); }
-    99% { transform: translate(-2px, 2px) skew(2deg); filter: grayscale(100%); }
+.mc-btn:hover {
+    background: #999;
 }
 
-/* Force Greyscale globally */
-body { filter: grayscale(100%); }
+.mc-btn:active {
+    border-color: #000;
+    border-bottom-color: #aaa;
+    border-right-color: #aaa;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Hover Effect for Bedrock Block */
+.mc-hover {
+    transition: transform 0.1s;
+}
+.mc-hover:hover {
+    transform: scale(1.05);
+}
 
 /* Physics Coin */
 .physics-coin {

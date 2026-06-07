@@ -4,13 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainSite = document.getElementById('main-site');
     const enterBtn = document.getElementById('enter-btn');
 
+    const progressBar = document.getElementById('mc-progress-bar');
+    if (progressBar) {
+        setTimeout(() => {
+            progressBar.style.width = '100%';
+        }, 100);
+        setTimeout(() => {
+            if (enterBtn) enterBtn.classList.remove('hidden');
+        }, 2100);
+    }
+
     if (enterBtn) {
         enterBtn.addEventListener('click', () => {
-            introScreen.classList.add('tv-off');
+            introScreen.style.opacity = '0';
             setTimeout(() => {
                 introScreen.style.display = 'none';
                 mainSite.style.display = 'block';
-            }, 500); // Wait for tv turn off animation (0.5s)
+            }, 500);
         });
     }
 
@@ -127,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function spawnPhysicsCoin(x, y) {
         const coin = document.createElement('div');
-        const items = ['🎩', '🕰️', '📜', '🗞️'];
+        const items = ['🪨', '⛏️', '💎', '🟩', '💣'];
         coin.innerText = items[Math.floor(Math.random() * items.length)];
         coin.className = 'physics-coin';
         coin.style.fontSize = (Math.random() * 2 + 1.5) + 'rem';

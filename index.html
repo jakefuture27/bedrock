@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="$OLDMONEY - Generational Wealth">
-    <title>$OLDMONEY | Generational Wealth</title>
+    <meta name="description" content="$BEDROCK - Unbreakable">
+    <title>$BEDROCK | Unbreakable</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Comic+Neue:wght@700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="star-texture"></div>
 
-    <div class="crt-overlay"></div>
-    <div class="crt-flicker"></div>
-    <div class="vignette"></div>
-
-    <!-- Old TV Intro Screen -->
-    <div id="intro-screen" class="tv-intro-container">
-        <div class="tv-noise"></div>
-        <div class="tv-center">
-            <h1 class="tv-title" style="font-family: 'Playfair Display', serif;">NO SIGNAL</h1>
-            <button id="enter-btn" class="tv-btn" style="font-family: 'Playfair Display', serif;">TUNE IN</button>
+    <!-- Minecraft Loading Screen -->
+    <div id="intro-screen" class="mc-loading-container">
+        <div class="mc-loading-content">
+            <h1 class="mc-title">Generating World...</h1>
+            <p class="mc-subtitle">Building terrain</p>
+            <div class="mc-progress-box">
+                <div id="mc-progress-bar" class="mc-progress-fill"></div>
+            </div>
+            <button id="enter-btn" class="mc-btn hidden">JOIN SERVER</button>
         </div>
     </div>
 
@@ -31,7 +30,7 @@
 
         <!-- Navbar -->
         <nav class="navbar">
-            <div class="nav-logo">$OLDMONEY</div>
+            <div class="nav-logo">$BEDROCK</div>
             <div class="nav-links">
                 <a href="#about">ABOUT</a>
             </div>
@@ -40,8 +39,8 @@
         <!-- Floating Background Elements -->
         <div class="floating-balls" id="floating-balls-container"></div>
         <div class="marquee-container">
-            <div class="marquee-content old-text">
-                GENERATIONAL WEALTH $OLDMONEY GENERATIONAL WEALTH $OLDMONEY GENERATIONAL WEALTH $OLDMONEY
+            <div class="marquee-content mc-text">
+                UNBREAKABLE $BEDROCK UNBREAKABLE $BEDROCK UNBREAKABLE $BEDROCK
             </div>
         </div>
 
@@ -49,16 +48,16 @@
         <section class="hero-section">
             <div class="net-worth-display">Net Worth: $<span id="net-worth">0</span></div>
             
-            <div class="hero-image-container glitch-container">
-                <img src="./oldmoney.jpg" alt="Old Money Coin" id="main-logo" class="hero-image" onerror="this.src='https://via.placeholder.com/400x200/000000/ffffff?text=Save+image+as+oldmoney.jpg'">
+            <div class="hero-image-container mc-hover">
+                <img src="./bedrock.png" alt="Bedrock Block" id="main-logo" class="hero-image" onerror="this.src='https://via.placeholder.com/400x400/222222/ffffff?text=Save+image+as+bedrock.png'">
             </div>
 
-            <h1 class="hero-title old-text">$OLDMONEY</h1>
-            <h2 class="hero-subtitle">GENERATIONAL WEALTH</h2>
-            <p class="hero-subtext">You don't make it. You inherit it.</p>
+            <h1 class="hero-title mc-text">$BEDROCK</h1>
+            <h2 class="hero-subtitle">UNBREAKABLE</h2>
+            <p class="hero-subtext">The absolute floor. We never break.</p>
             
             <div class="hero-buttons">
-                <button class="btn-solid">BUY $OLDMONEY</button>
+                <button class="btn-solid">BUY $BEDROCK</button>
             </div>
         </section>
 
