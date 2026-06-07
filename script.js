@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Generate floating fists
+    // Generate floating money bags
     const container = document.getElementById('floating-balls-container');
-    const numBalls = 60; // Generate 60 fists everywhere
+    const numBalls = 30; // 30 money bags
 
     if (container) {
         for (let i = 0; i < numBalls; i++) {
-            const ball = document.createElement('img');
-            ball.src = './never.png';
+            const ball = document.createElement('div');
+            ball.innerText = '💰';
+            ball.style.fontSize = Math.random() * 2 + 1 + 'rem';
             ball.classList.add('ball');
             
             // Randomize properties
